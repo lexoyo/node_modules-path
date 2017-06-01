@@ -1,0 +1,11 @@
+{
+  "name": "node_modules-path",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "node_modules": "index.js"
+  },
+  "author": "lexoyo",
+  "license": "GPL"
+}
