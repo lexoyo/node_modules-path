@@ -1,6 +1,6 @@
 {
   "name": "node_modules-path",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the path of the `node_modules` folder in your scripts or CLI or package.json",
   "main": "index.js",
   "bin": {
