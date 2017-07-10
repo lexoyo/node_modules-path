@@ -1,7 +1,11 @@
 {
   "name": "node_modules-path",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get the path of the `node_modules` folder in your scripts or CLI or package.json",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/lexoyo/node_modules-path"
+  },
   "main": "index.js",
   "bin": {
     "node_modules": "index.js"
