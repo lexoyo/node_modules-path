@@ -1,6 +1,6 @@
 {
   "name": "node_modules-path",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Get the path of the `node_modules` folder in your scripts or CLI or package.json",
   "repository": {
       "type": "git",
