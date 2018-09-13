@@ -26,3 +26,17 @@ Or you can use the env var `NODE_MODULES` exported by the script, but only in th
 npm run node_modules
 ls `$NODE_MODULES`/.bin/
 ```
+
+## node_modules folder path from another nodejs script
+
+```
+const nodeModulesPath = require('node_modules-path');
+console.log('node module path for this project:', nodeModulesPath);
+```
+
+This is especially useful to serve fonts in an express app
+
+```
+app.use('/fonts', express.static(Path.resolve(nodeModulesPath, 'font-awesome/fonts/')));
+
+```

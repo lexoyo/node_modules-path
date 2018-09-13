@@ -10,3 +10,6 @@ process.env.NODE_MODULES = path;
 // return the node_module path 
 console.log(path);
 
+// for use in a nodejs script
+module.exports = path;
+
