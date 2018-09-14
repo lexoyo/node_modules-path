@@ -1,6 +1,6 @@
 {
   "name": "node_modules-path",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Get the path of the `node_modules` folder in your scripts or CLI or package.json",
   "repository": {
     "type": "git",
@@ -15,5 +15,19 @@
   },
   "author": "lexoyo",
   "license": "GPL",
-  "keywords": ["node_modules", "path", "npm3+"]
+  "keywords": [
+    "node_modules",
+    "path",
+    "npm3+"
+  ],
+  "scripts": {
+    "echo": "echo  `node_modules` can differ from `node_modules module1`",
+    "test": "npm run test:cli && npm run test:cli1 && npm run test:js",
+    "test:js": "node test.js",
+    "test:cli1": "mkdir -p node_modules/module1 && if [[ `node_modules module1` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `node_modules module1`\" && exit 1; fi && rmdir node_modules/module1 ",
+    "test:cli": "if [[ `node_modules` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `node_modules`\" && exit 1; fi ",
+    "node_modules": "node ."
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
