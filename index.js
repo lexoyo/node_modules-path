@@ -8,7 +8,7 @@ const pwd = __dirname.split(path.sep);
 
 function getPath(moduleName, folder = pwd) {
   if(folder.length < 1) {
-    logError(nodeModuleName, folder);
+    logError(moduleName, folder);
     return null;
   }
   const nodeModulesPath = folder.concat(['node_modules']).join(path.sep);
@@ -16,11 +16,11 @@ function getPath(moduleName, folder = pwd) {
     return nodeModulesPath;
   }
   res = getPath(moduleName, folder.slice(0, -1));
-  if(!res) logError(nodeModuleName, folder);
+  if(!res) logError(moduleName, folder);
   return res;
 };
 
-function logError(nodeModuleName, folder) {
+function logError(moduleName, folder) {
   console.error(`Could not find the node_modules folder ${ moduleName ? "which contains " + moduleName : "" } in ${ folder.join('/') }`);
 }
 const result = getPath(process.argv[2]);
@@ -28,7 +28,7 @@ const result = getPath(process.argv[2]);
 // set an env var - avail to the current process, not in the global shell process
 process.env.NODE_MODULES = result;
 
-// return the node_module path 
+// return the node_module path
 console.log(result);
 
 // for use in a nodejs script
