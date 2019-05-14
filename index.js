@@ -12,7 +12,8 @@ function getPath(moduleName, folder = pwd) {
     return null;
   }
   const nodeModulesPath = folder.concat(['node_modules']).join(path.sep);
-  if(fs.existsSync(nodeModulesPath + '/' + (moduleName || ''))) {
+  const p = moduleName ? path.join(nodeModulesPath, moduleName) : nodeModulesPath;
+  if(fs.existsSync(p)) {
     return nodeModulesPath;
   }
   res = getPath(moduleName, folder.slice(0, -1));
@@ -21,7 +22,7 @@ function getPath(moduleName, folder = pwd) {
 };
 
 function logError(moduleName, folder) {
-  console.error(`Could not find the node_modules folder ${ moduleName ? "which contains " + moduleName : "" } in ${ folder.join('/') }`);
+  console.error(`Could not find the node_modules folder ${ moduleName ? "which contains " + moduleName : "" } in ${ folder.join(path.sep) }`);
 }
 const result = getPath(process.argv[2]);
 
