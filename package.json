@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "bin": {
-    "node_modules": "index.js"
+    "node_modules": "bin.js"
   },
   "author": "lexoyo",
   "license": "GPL",
