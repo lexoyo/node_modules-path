@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/lexoyo/node_modules-path.git"
   },
+  "engines": {
+    "node": ">=10.15.3 <18.0.0"
+  },
   "bugs": {
     "url": "https://github.com/lexoyo/node_modules-path/issues"
   },
@@ -27,8 +30,8 @@
     "echo": "echo  `node_modules` can differ from `node_modules module1`",
     "test": "mkdir -p node_modules && npm run test:cli && npm run test:cli1 && npm run test:js",
     "test:js": "node test.js",
-    "test:cli1": "mkdir -p node_modules/module1 && if [[ `node_modules module1` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `node_modules module1`\" && exit 1; fi && rmdir node_modules/module1 ",
-    "test:cli": "if [[ `node_modules` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `node_modules`\" && exit 1; fi ",
+    "test:cli1": "mkdir -p node_modules/module1 && if [[ `./bin.js module1` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `./bin.js module1`\" && exit 1; fi && rmdir node_modules/module1 ",
+    "test:cli": "if [[ `./bin.js` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `./bin.js`\" && exit 1; fi ",
     "node_modules": "node ."
   },
   "dependencies": {},
