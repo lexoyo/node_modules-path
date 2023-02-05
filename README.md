@@ -58,3 +58,15 @@ With a specific module name as a param, which is safer:
 app.use('/fonts', express.static(Path.resolve(node_modules('font-awesome'), 'font-awesome/fonts/')));
 // node_modules('font-awesome') will return the path to your node_modules or to the node_modules of a parent
 ```
+
+## node_modules folder path for sass includes
+
+In your `package.json` script to compile sass:
+
+```json
+{
+    "build:sass": "sass --load-path `node_modules normalize.css` src/css/app.scss dist/css/app.css"
+}
+
+```
+
