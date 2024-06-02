@@ -16,7 +16,7 @@ module.exports = function getPath(moduleName, folder = pwd) {
   if (fs.existsSync(p)) {
     return nodeModulesPath;
   }
-  res = getPath(moduleName, folder.slice(0, -1));
+  const res = getPath(moduleName, folder.slice(0, -1));
   if (!res) logError(moduleName, folder);
   return res;
 };
