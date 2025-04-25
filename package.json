@@ -30,8 +30,8 @@
     "echo": "echo  `node_modules` can differ from `node_modules module1`",
     "test": "mkdir -p node_modules && npm run test:cli && npm run test:cli1 && npm run test:js",
     "test:js": "node test.js",
-    "test:cli1": "mkdir -p node_modules/module1 && if [[ `./bin.js module1` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `./bin.js module1`\" && exit 1; fi && rmdir node_modules/module1 ",
-    "test:cli": "if [[ `./bin.js` == \"`pwd`/node_modules\" ]]; then echo 'ok'; else echo \"ERROR: `./bin.js`\" && exit 1; fi ",
+    "test:cli": "if [ \"$(./bin.js)\" = \"$(pwd)/node_modules\" ]; then echo 'ok'; else echo \"ERROR: $(./bin.js)\" && exit 1; fi",
+    "test:cli1": "mkdir -p node_modules/module1 && if [ \"$(./bin.js module1)\" = \"$(pwd)/node_modules\" ]; then echo 'ok'; else echo \"ERROR: $(./bin.js module1)\" && exit 1; fi && rmdir node_modules/module1",
     "node_modules": "node ."
   },
   "dependencies": {},
