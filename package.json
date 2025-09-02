@@ -16,7 +16,10 @@
   "bin": {
     "node_modules": "bin.js"
   },
-  "author": "lexoyo",
+  "author": {
+    "name": "Alex Hoyau",
+    "url": "https://lexoyo.me/"
+  },
   "contributors": [
     "fregu"
   ],
