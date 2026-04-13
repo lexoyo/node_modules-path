@@ -23,7 +23,7 @@
   "contributors": [
     "fregu"
   ],
-  "license": "GPL",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "node_modules",
     "path",
